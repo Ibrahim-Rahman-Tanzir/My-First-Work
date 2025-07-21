@@ -29,7 +29,7 @@ public class EncryptionProgram {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int N = scanner.nextInt();
-        scanner.nextLine(); // consume the newline after N
+        scanner.nextLine(); 
         
         for (int i = 0; i < N; i++) {
             String line = scanner.nextLine();
