@@ -1,26 +1,23 @@
 import java.util.Scanner;
 
 public class EncryptionProgram {
-
     public static String encryptLine(String line) {
         char[] chars = line.toCharArray();
         int len = chars.length;
-        
-        // First part: shift each letter 3 positions right in ASCII
+
         for (int i = 0; i < len; i++) {
             if ((chars[i] >= 'A' && chars[i] <= 'Z') || (chars[i] >= 'a' && chars[i] <= 'z')) {
                 chars[i] += 3;
             }
         }
-        
-        // Second part: reverse the line
+
         for (int i = 0; i < len / 2; i++) {
             char temp = chars[i];
             chars[i] = chars[len - 1 - i];
             chars[len - 1 - i] = temp;
         }
         
-        // Third part: shift second half one position left in ASCII
+        
         int half = len / 2;
         for (int i = half; i < len; i++) {
             chars[i] -= 1;
